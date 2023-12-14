@@ -58,9 +58,9 @@ int main() {
     estudiante1.agregarMateria("Fisica");
     estudiante1.agregarMateria("Quimica");
 
-    estudiante1.registrarAsistencia("2023-12-10", "Matematicas", Asistio);
-    estudiante1.registrarAsistencia("2023-12-11", "Fisica", Falta);
-    estudiante1.registrarAsistencia("2023-12-12", "Quimica", Tardanza);
+    estudiante1.registrarAsistencia("2023-12-11", "Matematicas", Asistio);
+    estudiante1.registrarAsistencia("2023-12-12", "Fisica", Falta);
+    estudiante1.registrarAsistencia("2023-12-13", "Quimica", Tardanza);
 
     imprimirEstudiante(estudiante1);
 
