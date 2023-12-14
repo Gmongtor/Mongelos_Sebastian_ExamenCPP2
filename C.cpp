@@ -33,3 +33,6 @@ int esMateriaValida(Estudiante* est, const char* materia) {
     }
     return 0;
 }
+int esFechaValida(const char* fecha) {
+    return (strlen(fecha) == 10 && fecha[4] == '-' && fecha[7] == '-');
+}
