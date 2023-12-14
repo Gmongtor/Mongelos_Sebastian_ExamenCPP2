@@ -3,6 +3,7 @@
 #include <vector>
 #include <map>
 #include <exception>
+#include <algorithm>
 
 using namespace std;
 
