@@ -10,6 +10,7 @@ struct Asistencia {
     string fecha;
     string materia;
     EstadoAsistencia estado;
+    vector<Asistencia> asistencias;
 };
 
 struct Estudiante {
