@@ -2,8 +2,16 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <exception>
 
 using namespace std;
+
+class FechaInvalidaException : public exception {
+public:
+    const char* what() const noexcept override {
+        return "El formato de la fecha es inválido.";
+    }
+};
 
 enum EstadoAsistencia { Asistio, Falta, Tardanza };
 
