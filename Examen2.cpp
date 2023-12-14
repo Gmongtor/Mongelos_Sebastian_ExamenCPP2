@@ -39,9 +39,17 @@ struct Estudiante {
     }
 
     void registrarAsistencia(const string& fecha, const string& materia, EstadoAsistencia estado) {
+        if (find(materias.begin(), materias.end(), materia) == materias.end()) {
+            throw MateriaNoRegistradaException();
+        }
+        if (fecha.length() != 10 || fecha[4] != '-' || fecha[7] != '-') {
+            throw FechaInvalidaException();
+        }
+
         Asistencia nuevaAsistencia = {fecha, materia, estado};
         asistencias.push_back(nuevaAsistencia);
     }
+};
 
     void mostrarAsistencias() const {
         cout << "Asistencias de " << nombre << ":" << endl;
