@@ -36,3 +36,20 @@ int esMateriaValida(Estudiante* est, const char* materia) {
 int esFechaValida(const char* fecha) {
     return (strlen(fecha) == 10 && fecha[4] == '-' && fecha[7] == '-');
 }
+void registrarAsistencia(Estudiante* est, const char* fecha, const char* materia, EstadoAsistencia estado) {
+    if (!esMateriaValida(est, materia)) {
+        printf("Error: La materia no existe.\n");
+        return;
+    }
+    if (!esFechaValida(fecha)) {
+        printf("Error: El formato de la fecha es inválido.\n");
+        return;
+    }
+
+    if (est->numAsistencias < 50) {
+        strcpy(est->asistencias[est->numAsistencias].fecha, fecha);
+        strcpy(est->asistencias[est->numAsistencias].materia, materia);
+        est->asistencias[est->numAsistencias].estado = estado;
+        est->numAsistencias++;
+    }
+}
