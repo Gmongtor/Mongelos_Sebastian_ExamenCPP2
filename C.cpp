@@ -53,3 +53,27 @@ void registrarAsistencia(Estudiante* est, const char* fecha, const char* materia
         est->numAsistencias++;
     }
 }
+void imprimirEstudiante(Estudiante* est) {
+    printf("Nombre: %s\n", est->nombre);
+    printf("Edad: %d\n", est->edad);
+    printf("Promedio: %.2f\n", est->promedio);
+    printf("Materias:\n");
+    for (int i = 0; i < est->numMaterias; i++) {
+        printf(" - %s\n", est->materias[i]);
+    }
+    printf("Asistencias:\n");
+    for (int i = 0; i < est->numAsistencias; i++) {
+        printf("Fecha: %s, Materia: %s, Estado: ", est->asistencias[i].fecha, est->asistencias[i].materia);
+        switch (est->asistencias[i].estado) {
+            case Asistio:
+                printf("Asistió\n");
+                break;
+            case Falta:
+                printf("Falta\n");
+                break;
+            case Tardanza:
+                printf("Tardanza\n");
+                break;
+        }
+    }
+}
