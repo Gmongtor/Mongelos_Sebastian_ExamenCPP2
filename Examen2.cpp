@@ -28,12 +28,19 @@ void imprimirEstudiante(Estudiante estudiante) {
     for (int i = 0; i < estudiante.materias.size(); i++) {
         cout << estudiante.materias[i] << endl;
     }
+    estudiante.mostrarAsistencias();
 }
 void registrarAsistencia(const string& fecha, const string& materia, EstadoAsistencia estado) {
     Asistencia nuevaAsistencia = {fecha, materia, estado};
     asistencias.push_back(nuevaAsistencia);
 }
-
+void mostrarAsistencias() const {
+    cout << "Asistencias de " << nombre << ":" << endl;
+    for (const auto& asistencia : asistencias) {
+        cout << "Fecha: " << asistencia.fecha << ", Materia: " << asistencia.materia
+             << ", Estado: " << (asistencia.estado == Asistio ? "Asistió" : asistencia.estado == Falta ? "Falta" : "Tardanza") << endl;
+    }
+}
 
 void agregarMateria(Estudiante& estudiante, string materia) {
     estudiante.materias.push_back(materia);
