@@ -14,8 +14,8 @@ typedef struct {
     char nombre[50];
     int edad;
     float promedio;
-    char materias[10][50]; // Suponiendo un máximo de 10 materias
+    char materias[10][50];
     int numMaterias;
-    Asistencia asistencias[50]; // Suponiendo un máximo de 50 asistencias
+    Asistencia asistencias[50];
     int numAsistencias;
 } Estudiante;
