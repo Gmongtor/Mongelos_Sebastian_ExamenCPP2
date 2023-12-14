@@ -86,9 +86,8 @@ int main() {
 
     try {
         estudiante1.registrarAsistencia("2023-12-11", "Matematicas", Asistio);
-        estudiante1.registrarAsistencia("2023-12-12", "Fisica", Falta);
-        estudiante1.registrarAsistencia("2023-12-13", "Quimica", Tardanza);
-        // Puedes añadir aquí registros adicionales para probar las excepciones
+        estudiante1.registrarAsistencia("20231211", "Matematicas", Asistio); // Fecha mal formateada
+        estudiante1.registrarAsistencia("2023-12-12", "Historia", Falta);    // Materia no existente
     } catch (const FechaInvalidaException& e) {
         cout << "Excepción capturada: " << e.what() << endl;
     } catch (const MateriaInvalidaException& e) {
@@ -99,5 +98,6 @@ int main() {
 
     return 0;
 }
+
 
 
