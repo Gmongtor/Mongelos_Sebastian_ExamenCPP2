@@ -77,3 +77,21 @@ void imprimirEstudiante(Estudiante* est) {
         }
     }
 }
+int main() {
+    Estudiante estudiante1 = {"Sebastian", 18, 4.5, {}, 0, {}, 0};
+
+    agregarMateria(&estudiante1, "Matematicas");
+    agregarMateria(&estudiante1, "Fisica");
+    agregarMateria(&estudiante1, "Quimica");
+
+    registrarAsistencia(&estudiante1, "2023-12-11", "Matematicas", Asistio);
+    registrarAsistencia(&estudiante1, "2023-12-12", "Fisica", Falta);
+    registrarAsistencia(&estudiante1, "2023-12-13", "Quimica", Tardanza);
+
+    registrarAsistencia(&estudiante1, "20231211", "Matematicas", Asistio); // Fecha mal formateada
+    registrarAsistencia(&estudiante1, "2023-12-12", "Historia", Falta);    // Materia no existente
+
+    imprimirEstudiante(&estudiante1);
+
+    return 0;
+}
