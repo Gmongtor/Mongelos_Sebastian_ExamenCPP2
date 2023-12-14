@@ -2,21 +2,21 @@
 #include <string>
 #include <vector>
 #include <map>
-
 using namespace std;
 
-struct Estudiante {
-    string nombre;
-    int edad;
-    float promedio;
-    vector<string> materias;
-};
 enum EstadoAsistencia { Asistio, Falta, Tardanza };
 
 struct Asistencia {
     string fecha;
     string materia;
     EstadoAsistencia estado;
+};
+
+struct Estudiante {
+    string nombre;
+    int edad;
+    float promedio;
+    vector<string> materias;
 };
 
 void imprimirEstudiante(Estudiante estudiante) {
