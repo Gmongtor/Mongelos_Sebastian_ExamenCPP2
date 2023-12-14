@@ -29,4 +29,18 @@ struct Estudiante {
          }
      }
  }
-
+    int main() {
+        Estudiante estudiante1;
+        estudiante1.nombre = "Juan";
+        estudiante1.edad = 20;
+        estudiante1.promedio = 9.5;
+        estudiante1.materias.push_back("Matematicas");
+        estudiante1.materias.push_back("Fisica");
+        estudiante1.materias.push_back("Quimica");
+        imprimirEstudiante(estudiante1);
+        agregarMateria(estudiante1, "Programacion");
+        imprimirEstudiante(estudiante1);
+        eliminarMateria(estudiante1, "Fisica");
+        imprimirEstudiante(estudiante1);
+        return 0;
+    }
