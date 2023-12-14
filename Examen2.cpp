@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -9,6 +10,13 @@ struct Estudiante {
     int edad;
     float promedio;
     vector<string> materias;
+};
+enum EstadoAsistencia { Asistio, Falta, Tardanza };
+
+struct Asistencia {
+    string fecha;
+    string materia;
+    EstadoAsistencia estado;
 };
 
 void imprimirEstudiante(Estudiante estudiante) {
