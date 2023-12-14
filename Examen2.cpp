@@ -12,6 +12,12 @@ public:
         return "El formato de la fecha es inválido.";
     }
 };
+class MateriaInvalidaException : public exception {
+public:
+    const char* what() const noexcept override {
+        return "La materia no existe.";
+    }
+};
 
 enum EstadoAsistencia { Asistio, Falta, Tardanza };
 
