@@ -25,3 +25,11 @@ void agregarMateria(Estudiante* est, const char* materia) {
         strcpy(est->materias[est->numMaterias++], materia);
     }
 }
+int esMateriaValida(Estudiante* est, const char* materia) {
+    for (int i = 0; i < est->numMaterias; i++) {
+        if (strcmp(est->materias[i], materia) == 0) {
+            return 1;
+        }
+    }
+    return 0;
+}
