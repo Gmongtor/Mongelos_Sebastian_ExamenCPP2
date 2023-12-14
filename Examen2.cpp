@@ -29,6 +29,11 @@ void imprimirEstudiante(Estudiante estudiante) {
         cout << estudiante.materias[i] << endl;
     }
 }
+void registrarAsistencia(const string& fecha, const string& materia, EstadoAsistencia estado) {
+    Asistencia nuevaAsistencia = {fecha, materia, estado};
+    asistencias.push_back(nuevaAsistencia);
+}
+
 
 void agregarMateria(Estudiante& estudiante, string materia) {
     estudiante.materias.push_back(materia);
